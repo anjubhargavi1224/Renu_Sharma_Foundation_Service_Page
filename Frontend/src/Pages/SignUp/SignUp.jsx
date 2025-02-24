@@ -2,7 +2,7 @@ import React from "react";
 export default function SignUp(){
     return(
         <>
-        <h1 className="text-3xl font-bold underline">Signup Page(Team Satwik)</h1>
+        <h1 className="flex items-center justify-center h-screen text-3xl font-bold">Signup Page(Team Satwik)</h1>
         </>
     )
 }
