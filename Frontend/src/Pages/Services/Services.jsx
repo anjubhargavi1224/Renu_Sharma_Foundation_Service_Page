@@ -1,23 +1,26 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
-import HeroSection from "../../components/HeroSection";
 import Features from "../../components/Features";
 import Achievements from "../../components/Achievements";
-import Impact from "../../components/Impact";
-import Footer from "../../components/Footer";
 import Reachus from "../../components/Reachus";
+import Banner from "../../components/Banner";
+import Domains from "../../components/Domains";
+import Feedback from "../../components/Feedback";
+import Carousel from "../../components/Carousel";
+import NgoBanner from "../../components/NgoBanner";
 
 function Services() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="bg-blue-950">
-      <Navbar />
-      <HeroSection onOpen={() => setShowModal(true)} />
-      <Features />
+        <Banner/>
+        <Features />
+        <Domains/>
+        <NgoBanner/>
+        <Carousel/>
       <Achievements />
-      <Impact />
-      <Footer onOpen={() => setShowModal(true)} />
+      <Feedback onOpen={() => setShowModal(true)} />
+{/*      <Footer onOpen={() => setShowModal(true)} />*/}
       {showModal && <Reachus onClose={() => setShowModal(false)} />}
     </div>
   );

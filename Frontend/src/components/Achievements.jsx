@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import NGO6 from "../assets/NGO6.jpg";
+import NGO8 from "../assets/NGO8.jpg";
 import NGO9 from "../assets/NGO9.jpg";
 
 const achievementsData = [
@@ -11,7 +11,7 @@ const achievementsData = [
     description:
       "At Renu Sharma Foundation, our unwavering optimism fuels our pursuit of meaningful change. Through the power of volunteering, we are building a society where every individual can reshape the conversation with their voices and stories, creating a brighter future for all.",
     img1: NGO9,
-    img2: NGO6,
+    img2: NGO8,
     bgColor: "bg-[#001f3f]",
   },
   {
@@ -20,7 +20,7 @@ const achievementsData = [
     subtitle: "Knowledge is Power",
     description:
       "By providing quality education to underprivileged children, we are ensuring a future filled with opportunities, hope, and success for all.",
-    img1: NGO6,
+    img1: NGO8,
     img2: NGO9,
     bgColor: "bg-[#001f3f]",
   },
@@ -31,7 +31,7 @@ const achievementsData = [
     description:
       "Through medical camps, free health check-ups, and awareness programs, we are striving to make healthcare accessible for everyone.",
     img1: NGO9,
-    img2: NGO6,
+    img2: NGO8,
     bgColor: "bg-[#001f3f]",
   },
 ];
