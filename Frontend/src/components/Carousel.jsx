@@ -1,21 +1,20 @@
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import NGOC1 from "../assets/NGOC1.jpeg";
-import NGOC2 from "../assets/NGOC2.jpeg";
-import NGOC3 from "../assets/NGOC3.jpeg";
-import NGOC4 from "../assets/NGOC4.jpeg";
-import NGOC5 from "../assets/NGOC5.jpeg";
-import NGOC6 from "../assets/NGOC6.jpeg";
-import NGOC7 from "../assets/NGOC7.jpeg";
+import AF1 from "../assets/AF1.jpeg";
+import UIF1 from "../assets/UIF1.jpeg";
+import SMB2 from "../assets/SMB2.jpeg";
+import PDF1 from "../assets/PDF1.jpeg";
+import AFB1 from "../assets/AFB1.jpeg";
+
 
 const images = [
-  NGOC1,
-  NGOC2,
-  NGOC3,
-  NGOC4,
-  NGOC5,
-  NGOC6,
-  NGOC7,
+  AF1,
+  UIF1,
+  SMB2,
+  PDF1,
+  AFB1,
+  AF1,
+  PDF1,
 ];
 
 const duplicatedImages = [...images, ...images]; // Duplicating the images for an infinite loop
@@ -32,7 +31,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden p-6 flex flex-col bg-[#001f3f] justify-center items-center w-screen h-[350px]">
+    <div className="overflow-hidden p-6 flex flex-col bg-sky-200 justify-center items-center w-screen h-[350px]">
       <h1 className="text-3xl text-white font-bold mb-4">What We Do!</h1>
       <motion.div
         ref={carouselRef}
