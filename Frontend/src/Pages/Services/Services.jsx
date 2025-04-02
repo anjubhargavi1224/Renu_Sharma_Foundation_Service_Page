@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import Reachus from "../../components/Reachus";
-import Banner from "../../components/Banner";
-import Carousel from "../../components/Carousel";
 import HuffyComponent from "../../components/HuffyComponent";
 import TestimonialsSection from "../../components/TestimonialsSection";
 import Hero from "../../components/Hero";
 import Service from "../../components/Service";
-import Impact from "../../components/Impact";
+import Home from "../../components/Home";
+import HeroSection from "../../components/Herosection";
+import HomeSection from "../../components/HomeSection";
 
 
 function Services() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="bg-sky-200">
-        <Banner/>
-        <Impact/>
+    <div className="bg-[#001f3f]">
+      <HeroSection/>
+        <Home/>
+        <HomeSection/>
         <Hero/>
         <Service/>
         <HuffyComponent/>
-        <Carousel/>
         <TestimonialsSection onOpen={() => setShowModal(true)} />
       {showModal && <Reachus onClose={() => setShowModal(false)} />}
     </div>

@@ -10,18 +10,21 @@ const slides = [
     image: SMB2,
     capital: "$3.5M+",
     intro: "A vision for liveable, sustainable & affordable.",
+    description: "Crafted for your comfort, to enhance the beauty of your present lifestyle but also paves the way for a more aesthetically pleasing and harmonious future for both you and your cherished family.",
   },
   {
     title: "Building Tomorrow, Today.",
     image: UIF1,
     capital: "$5.2M+",
     intro: "Revolutionizing urban spaces with modern design.",
+    description: "Redefining modern architecture to bring sustainability, elegance, and futuristic designs, creating spaces where luxury and functionality blend seamlessly.",
   },
   {
     title: "Your Dream, Our Vision.",
     image: AF1,
     capital: "$7.1M+",
     intro: "Creating homes that blend luxury with sustainability.",
+    description: "Transforming dreams into reality by crafting homes that embody your desires while ensuring eco-friendly living, making every space not just a house, but a home.",
   },
 ];
 
@@ -37,7 +40,7 @@ const Hero = () => {
   const rightInView = useInView(rightRef, { triggerOnce: false, margin: "-100px" });
   const imageInView = useInView(imageRef, { triggerOnce: false, margin: "-100px" });
   const headingInView = useInView(headingRef, { triggerOnce: false, margin: "-100px" });
-
+0
   // Auto-change slides
   useEffect(() => {
     const interval = setInterval(() => {
@@ -49,9 +52,9 @@ const Hero = () => {
   const currentSlide = slides[currentIndex];
 
   return (
-    <div className="relative bg-sky-200 text-white p-10 rounded-[40px] max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+    <div className="relative bg-[#001f3f] text-white p-10 rounded-[40px] max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
       
-      {/* Left Section - Capital Raised (Fades In) */}
+      {/* Left Section - Description (Fades In) */}
       <motion.div 
         ref={leftRef}
         initial={{ opacity: 0, x: -50 }} 
@@ -59,38 +62,29 @@ const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="bg-white text-black p-6 rounded-[30px] shadow-lg w-[350px] sm:w-[400px] lg:w-[380px] relative top-10"
       >
-        <h2 className="text-sm font-semibold text-gray-700">Capital raised</h2>
-        <motion.h1 
-          key={currentSlide.capital}
-          initial={{ opacity: 0, y: 10 }} 
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-4xl font-bold mt-2"
-        >
-          {currentSlide.capital}
-        </motion.h1>
+        <h2 className="text-sm font-semibold text-gray-700">Description</h2>
         <motion.p
-          key={currentSlide.intro}
+          key={currentSlide.description}
           initial={{ opacity: 0, y: 10 }} 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-          className="mt-4 text-gray-600 text-sm leading-relaxed"
+          className="mt-4 text-lg font-medium"
         >
-          Crafted for your comfort, to enhance the beauty of your present lifestyle but also paves the way for a more aesthetically pleasing and harmonious future for both you and your cherished family.
+          {currentSlide.description}
         </motion.p>
       </motion.div>
-      
+
       {/* Center Section - Heading and Image */}
       <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left">
         <motion.h1 
           ref={headingRef}
-          key={currentSlide.title}
+          key="We craft the future dwellin." // Fixed heading text
           initial={{ opacity: 0, y: -30 }} 
           animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           className="text-5xl lg:text-6xl font-bold leading-tight"
         >
-          {currentSlide.title}
+          Trendy Domains
         </motion.h1>
 
         {/* Image Transition */}
@@ -106,7 +100,7 @@ const Hero = () => {
           className="mt-6 rounded-[30px] w-full max-w-[600px] lg:max-w-[550px] shadow-lg"
         />
       </div>
-      
+
       {/* Right Section - Introduction (Fades In) */}
       <motion.div 
         ref={rightRef}

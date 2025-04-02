@@ -1,22 +1,28 @@
 import { motion } from "framer-motion";
+import Content from "../assets/Content.jpg";
+import Graphic from "../assets/Graphic.jpg";
+import Logo from "../assets/Logo.jpg";
+import SEO from "../assets/SEO.jpg";
+import WEB from "../assets/WEB.jpg";
 
 const services = [
-  { title: "Content Writing", subtitle: "Engage your community", image: "/images/content.jpg" },
-  { title: "SEO", subtitle: "Boost your traffic", image: "/images/seo.jpg" },
-  { title: "Website Development", subtitle: "Build your site", image: "/images/webdev.jpg" },
-  { title: "Logo Design", subtitle: "Elevate your brand", image: "/images/logo.jpg" },
-  { title: "Voice-over", subtitle: "Tell your story", image: "/images/voice.jpg" },
+  { title: "Content Writing", subtitle: "Engage your community", image: Content },
+  { title: "SEO", subtitle: "Boost your traffic", image: SEO },
+  { title: "Website Development", subtitle: "Build your site", image: WEB },
+  { title: "Logo Design", subtitle: "Elevate your brand", image: Logo },
+  { title: "Graphic Design", subtitle: "Tell your story", image: Graphic },
 ];
 
 const Services = () => {
   return (
-    <section className="px-8 py-16 bg-sky-200">
+    <section className="px-8 py-16 bg-[#001f3f]">
       {/* Section Heading */}
       <motion.h2
-        className="text-3xl font-bold text-center mb-8"
+        className="text-3xl text-white font-bold text-center mb-8"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        viewport={{ once: false }} // Ensures effect repeats
       >
         Most Popular Categories
       </motion.h2>
@@ -27,6 +33,10 @@ const Services = () => {
           <motion.div
             key={index}
             className="relative w-72 h-96 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: false }} // Ensures effect repeats
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

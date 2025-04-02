@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./HuffyComponent.css"
+import "./HuffyComponent.css";
 import UIF1 from "../assets/UIF1.jpeg";
 import SMB2 from "../assets/SMB2.jpeg";
 import AF1 from "../assets/AF1.jpeg";
@@ -63,45 +63,34 @@ const HuffyComponent = () => {
   };
 
   return (
-    <div className="bg-sky-200 text-white p-8 rounded-lg">
-      {/* Header */}
-      <div className="flex justify-between items-center">
-        <div className="text-lg font-bold">{slides[currentSlide].title}</div>
-        <h6 className="text-sm">Home | Project | About Us | FAQs | Contact Us</h6>
+    <div className="bg-[#001f3f] text-white p-8 rounded-lg">
+      {/* Tagline */}
+      <div className="text-center">
+        <h1 className="text-4xl mb-10 font-bold">We craft the future dwelling.</h1>
       </div>
 
       {/* Main Content */}
       <div className="flex mt-8">
-        {/* Left Section (Text with Jump-in Animation) */}
+        {/* Left Section (Text with Fade-in-Right Animation) */}
         <div className="w-1/2 p-8 bg-gray-800 rounded-lg">
           <div
             key={resetKey} // Reset the animation on every slide change
-            className={`${
-              direction === "forward" ? "animate-jump-in" : ""
-            }`} // Apply animation to the whole text container
+            className={`transition-transform duration-700 transform ${
+              direction === "forward" ? "animate-fade-right" : "animate-fade-left"
+            }`} // Apply fade-in-right when moving forward, fade-in-left when going backward
           >
-            <div className="text-lg font-bold">
-              Capital raised
-            </div>
-            <div className="text-2xl font-bold">
-              {slides[currentSlide].capital}
-            </div>
-            <p className="mt-2">
-              {slides[currentSlide].description}
-            </p>
-            <h2 className="text-lg font-bold mt-6">
-              Introduction
-            </h2>
-            <p className="mt-2 text-sm">
-              {slides[currentSlide].intro}
-            </p>
+            <div className="text-lg font-bold">Capital raised</div>
+            <div className="text-2xl font-bold">{slides[currentSlide].capital}</div>
+            <p className="mt-2">{slides[currentSlide].description}</p>
+            <h2 className="text-lg font-bold mt-6">Introduction</h2>
+            <p className="mt-2 text-sm">{slides[currentSlide].intro}</p>
             <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
               {slides[currentSlide].buttonText}
             </button>
           </div>
         </div>
 
-        {/* Right Section (Image with Fade-in-left Animation) */}
+        {/* Right Section (Image with Fade-in-Left Animation) */}
         <div className="w-1/2 flex justify-center">
           <div
             key={resetKey} // Reset the animation on every slide change
@@ -117,12 +106,6 @@ const HuffyComponent = () => {
           </div>
         </div>
       </div>
-
-      {/* Tagline */}
-      <div className="mt-8 text-center">
-        <h1 className="text-4xl font-bold">We craft the future dwelling.</h1>
-      </div>
-
     </div>
   );
 };
